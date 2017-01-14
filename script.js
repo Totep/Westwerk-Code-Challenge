@@ -24,16 +24,12 @@ $.ajax({
             var position = employees[i].position;
             var image = employees[i].image;
 
-            $( "#emppic" ).append("<div class='square'></div>");
-            $( "#emppic" ).append("<img src='/employee_images/" +  image + "'" + "/>");
-            $( ".square" ).append( "<h2>" + firstName + " " + lastName +"</h2>" );
-            $( ".square" ).append( "<p>" + position +"</p>" );
-
-
-
-
+            $('#emppic').append("<div class='square'><h2>" + firstName + " " + lastName +
+                "</h2><p>" + position + "</p></div><img src='/employee_images/" + image + "'" + "/>");
     }
      };
+
+
     if (i = 9) {
     $("#more").click(function addemp() {
         for (i = 9; i < 13; i++) {
@@ -42,10 +38,8 @@ $.ajax({
             var position = employees[i].position;
             var image = employees[i].image;
 
-            $("#emppic").append("<div class='square'></div>");
-            $("#emppic").append("<img src='/employee_images/" + image + "'" + "/>");
-            $(".square").append("<h2>" + firstName + " " + lastName + "</h2>");
-            $(".square").append("<p>" + position + "</p>");
+            $('#emppic').append("<div class='square'><h2>" + firstName + " " + lastName +
+                "</h2><p>" + position + "</p></div><img src='/employee_images/" + image + "'" + "/>");
 
 
         }
@@ -58,9 +52,8 @@ $.ajax({
                 var position = employees[i].position;
                 var image = employees[i].image;
 
-                $("#emppic").append("<p>" + firstName + " " + lastName + "</p>");
-                $("#emppic").append("<p>" + position + "</p>");
-                $("#emppic").append("<img src='/employee_images/" + image + "'" + "/>");
+                $('#emppic').append("<div class='square'><h2>" + firstName + " " + lastName +
+                    "</h2><p>" + position + "</p></div><img src='/employee_images/" + image + "'" + "/>");
                 $("#more").remove();
             }
         })
