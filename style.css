@@ -18,25 +18,6 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
 
 body {
     min-height: 100%;
@@ -87,6 +68,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #01C5BB;
+    margin: none;
 }
 
 nav #logo {
@@ -122,6 +104,7 @@ nav #logo {
     position: relative;
     width: 100%;
     height: 250px;
+    margin-bottom: 200px;
 }
 
 #phil {
@@ -132,7 +115,6 @@ nav #logo {
     max-width: 60%;
     max-height: 60%;
     margin-top: ;
-    margin-bottom: 5px;
 }
 
 #und {
@@ -156,41 +138,40 @@ nav #logo {
 }
 
 #numbers {
-    margin-top: 200px;
     position: relative;
     width: 100%;
-    border-spacing: 0;
-    border: none;
+    display: flex;
+    flex-wrap: wrap;
     height: 800px;
 }
 
 #one {
+    position: relative;
     width: 50%;
     height: 50%;
-    float: left;
     background-image: url("images/Layer%20114.png");
 }
 
 #two {
     width: 50%;
     height: 50%;
-    float: right;
+    position: relative;
     background-color: #01C5BB;
 }
 
 #three {
     height: 50%;
     width: 50%;
-    float: left;
+    position: relative;
     background-color: #01C5BB;
 }
 
 #four {
     height: 50%;
     width: 50%;
-    float: right;
+    position: relative;
     background-image: url("images/beer.png");
-    background-size: 100% 100%;
+    background-size: cover;
 }
 
 #beer {
@@ -262,18 +243,6 @@ nav #logo {
     margin-top: 50px;
     max-width: 90%;
     max-height: 40%;
-}
-
-@media all and (max-width:400px)
-{
-    #one, #two, #three, #four
-    {
-        display: block;
-        float: none;
-        width: 100%;
-        margin: none;
-        height: 350px;
-    }
 }
 
 #grey {
@@ -461,34 +430,31 @@ input[type=radio]:checked + label::after {
 
 #emppic {
     width: 100%;
-    background-image: url("/employee_images/" +  image + '"');
-    background-image: display(block);
-    background-image: height(350px);
-    background-image: width(100%);
-    background-image: float(left);
     position: relative;
-}
-
-#emppic img {
-    height: 350px;
-    width: 25%;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .square {
-    position: absolute;
-    display: inline;
-    opacity: 0;
+    position: relative;
     height: 350px;
     width: 25%;
-    float: left;
-    background-color: #01C5BB;
     text-align: center;
+    background-size: cover;
 }
 
-.square:hover {
+.hoverbox {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 350px;
+    width: 100%;
+    opacity: 0;
+}
+
+.hoverbox:hover {
     opacity: 0.75;
+    background-color: #01C5BB;
 }
 
 .square h2 {
@@ -514,6 +480,7 @@ footer {
     background-color: #171717;
     width: 100%;
     height: 130px;
+    margin-top: 50px;
 }
 
 #w {
@@ -544,12 +511,20 @@ footer ul li a {
 
 @media all and (max-width:800px)
 {
-    #emppic img, .square
+    .square
     {
-        display: block;
-        float: left;
+        position: relative;
         width: 33%;
-        height: auto;
+        height: 250px;
+        margin: none;
+    }
+    .square h2 {
+        margin-top: 40%;
+    }
+    .hoverbox {
+        position: absolute;
+        width: 100%;
+        height: 100%;
         margin: none;
     }
     .half
@@ -561,15 +536,48 @@ footer ul li a {
 
 @media all and (max-width:400px)
 {
-    #emppic img, .square
+    .square
     {
-        display: block;
-        float: left;
+        position: relative;
         width: 50%;
-        height: auto;
+        height: 150px;
         margin: none;
     }
-
+    .square h2 {
+        margin-top: 25%;
+    }
+    .hoverbox {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        margin: none;
+    }
+    #numbers {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        height: 1400px;
+    }
+    #one, #two, #three, #four
+    {
+        width: 100%;
+        margin: none;
+        height: 350px;
+    }
+    #one {
+        order: 1;
+    }
+    #two {
+        order: 2;
+    }
+    #three {
+        order: 4;
+    }
+    #four {
+        order: 3;
+    }
+}
     @media only screen and (max-width : 700px) {
 
         header {
@@ -585,7 +593,6 @@ footer ul li a {
             padding: 20px;
             background: black;
             border: 5px solid #444;
-            top: 60px;
             width: 100%;
             border-radius: 4px 4px 4px 4px;
 
@@ -605,11 +612,9 @@ footer ul li a {
             display: block;
 
         }
-        @media only screen and (max-width: 640px)  {
 
-
-            .full {
-                display:block;
-                width:100%;
-            }
+        .full {
+            display: block;
+            width: 100%;
         }
+}
