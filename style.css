@@ -114,7 +114,6 @@ nav #logo {
     transform: translateX(-50%) translateY(-50%);
     max-width: 60%;
     max-height: 60%;
-    margin-top: ;
 }
 
 #und {
@@ -132,7 +131,7 @@ nav #logo {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    max-width: 60%;
+    max-width: 90%;
     max-height: 60%;
     margin-top: 110px;
 }
@@ -350,13 +349,14 @@ label {
 
 }
 
-.tab-content img {
-    margin: 1em;
+.tab-content p {
+    font-family: sans-serif;
     width: 90%;
     display: block;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 /* :checked */
@@ -592,10 +592,7 @@ footer ul li a {
             position: absolute;
             padding: 20px;
             background: black;
-            border: 5px solid #444;
             width: 100%;
-            border-radius: 4px 4px 4px 4px;
-
         }
 
         nav li {
